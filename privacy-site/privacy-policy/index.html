@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — FamilyVault</title>
+  <meta name="description" content="Privacy policy for the FamilyVault / Družinski sef Android app.">
+  <link rel="canonical" href="https://andrazpoje.github.io/FamilyVault-privacy/privacy-policy/">
+  <link rel="alternate" hreflang="en" href="https://andrazpoje.github.io/FamilyVault-privacy/privacy-policy/">
+  <link rel="alternate" hreflang="sl" href="https://andrazpoje.github.io/FamilyVault-privacy/privacy-policy/sl/">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to the privacy policy</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="./" aria-label="FamilyVault privacy policy home">
+        <span class="brand-mark" aria-hidden="true">FV</span>
+        <span>FamilyVault</span>
+      </a>
+      <nav class="language-switcher" aria-label="Language selection">
+        <a href="./" lang="en" hreflang="en" aria-current="page">English</a>
+        <a href="sl/" lang="sl" hreflang="sl">Slovenščina</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="policy-shell">
+    <article>
+      <header class="policy-heading">
+        <h1>Privacy Policy</h1>
+        <p class="updated">Last updated: <time datetime="2026-08-28">August 28, 2026</time></p>
+        <p class="eyebrow">FamilyVault / Družinski sef</p>
+        <p class="lead">FamilyVault / Družinski sef is an Android app for storing important family information, document metadata, attachments, and reminders locally on the user's device.</p>
+        <p>This privacy policy explains how the current version of the app handles data.</p>
+      </header>
+
+      <section aria-labelledby="data-storage">
+        <h2 id="data-storage">Data storage</h2>
+        <p>The current version stores data locally on the user's device by default.</p>
+        <p>The app may store:</p>
+        <ul>
+          <li>family member names</li>
+          <li>birth dates</li>
+          <li>relationship/category information</li>
+          <li>notes entered by the user</li>
+          <li>tax numbers</li>
+          <li>EMŠO numbers</li>
+          <li>document metadata</li>
+          <li>document expiration dates</li>
+          <li>reminder rules</li>
+          <li>PDF or image attachments selected by the user</li>
+          <li>profile photos selected by the user</li>
+          <li>app settings, including app lock and screenshot protection settings</li>
+        </ul>
+        <p>Attachments selected by the user are copied into app-private storage on the device.</p>
+        <p>The local Room database is encrypted. Attachments and profile photos are encrypted in app-private storage.</p>
+        <p>Attachments are encrypted at rest. When the user opens an attachment, FamilyVault prepares a temporary decrypted file in a limited cache area and shares it with the selected external app through FileProvider. The external app is not part of the FamilyVault security model. Automatic cleanup is limited to these regenerable decrypted cache copies and exactly named legacy plaintext inner-ZIP temporary files from the older encrypted-export flow. The current encrypted writer creates no plaintext ZIP temporary. Cleanup does not automatically delete the durable database, local keys, encrypted attachments, encrypted profile photos, user-selected <code>.fvbackup</code> exports, or legacy <code>.zip</code> exports created by older versions.</p>
+        <p>If the user chooses Add to calendar, FamilyVault opens the selected calendar app with basic expiry-date information. Calendar events are no longer protected by the FamilyVault security model and depend on the selected calendar app and the user's sync settings.</p>
+      </section>
+
+      <section aria-labelledby="data-collection">
+        <h2 id="data-collection">Data collection</h2>
+        <p>The current version does not transmit family data, document data, attachments, tax numbers, EMŠO numbers, or reminder data to a developer server.</p>
+        <p>The current version does not include:</p>
+        <ul>
+          <li>cloud sync</li>
+          <li>user accounts</li>
+          <li>shared family spaces</li>
+          <li>analytics</li>
+          <li>advertising</li>
+          <li>OCR or AI processing</li>
+          <li>premium/subscription account processing</li>
+          <li>restore/import</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="data-sharing">
+        <h2 id="data-sharing">Data sharing</h2>
+        <p>The current version does not automatically share user data with the developer or with third-party services.</p>
+        <p>User-initiated actions such as opening attachments in external apps, adding an expiry date to a calendar app, or exporting backup files can move copies of data outside FamilyVault's local security model.</p>
+        <p>Users may manually export their own data using the local backup export feature. The only user-accessible backup export is a password-protected encrypted <code>.fvbackup</code> file. The user starts the export and chooses its destination through Android's Storage Access Framework, so the export remains under the user's control. FamilyVault streams the internal ZIP backup payload through authenticated encryption without writing a plaintext ZIP temporary file. Direct plaintext ZIP export is not available. Restore/import is not implemented.</p>
+        <p>Users are responsible for remembering the backup password because it cannot be recovered by the app. A failed export may leave an <code>.fvbackup</code> file at the user-selected location. Before the final authentication tag is accepted it is incomplete and invalid; after a late destination write, flush, or close failure its on-disk status is unknown and it may already be complete. FamilyVault still reports failure, so the user should not rely on that file and may delete it before retrying.</p>
+      </section>
+
+      <section aria-labelledby="permissions">
+        <h2 id="permissions">App permissions</h2>
+        <p>The app may request permissions required for its features, such as notification permission on Android 13 and newer.</p>
+        <p>The app uses file access flows selected by the user to attach documents or export backups. Adding an expiry date to a calendar uses Android's calendar insert intent and does not require WRITE_CALENDAR permission.</p>
+      </section>
+
+      <section aria-labelledby="app-lock">
+        <h2 id="app-lock">App lock and screenshot protection</h2>
+        <p>The app includes an optional app lock using Android biometric/device credential features.</p>
+        <p>The app also includes optional screenshot protection. When enabled, the app attempts to prevent screenshots and screen recording through Android system window security flags.</p>
+        <p>These features help protect access to the app, but they are not a replacement for full device security or secure backups.</p>
+      </section>
+
+      <section aria-labelledby="retention">
+        <h2 id="retention">Data retention</h2>
+        <p>Data remains stored locally on the user's device until the user deletes it in the app or uninstalls the app.</p>
+        <p>Exported backup files remain wherever the user saves or shares them.</p>
+      </section>
+
+      <section aria-labelledby="deletion">
+        <h2 id="deletion">Data deletion</h2>
+        <p>Users can delete family members, documents, reminders, and attachments through the app where supported.</p>
+        <p>Some deletion actions may be blocked when related records still exist, to prevent accidental data loss.</p>
+        <p>The app does not currently create user accounts, so there is no account deletion flow. Local data can be deleted in the app where supported, by clearing the app's data in Android settings, or by uninstalling the app. Backup/export files created by the user outside the app must be deleted by the user from the location where they were saved.</p>
+      </section>
+
+      <section aria-labelledby="children">
+        <h2 id="children">Children's data</h2>
+        <p>The app can store information about family members, including children, when the user manually enters it.</p>
+        <p>The app is not currently designed as a child-directed service and does not create child user accounts.</p>
+      </section>
+
+      <section aria-labelledby="security">
+        <h2 id="security">Security</h2>
+        <p>The current version is a local-first build.</p>
+        <p>The local Room database, attachments, and profile photos are encrypted at rest. The only user-accessible backup export is a password-protected encrypted <code>.fvbackup</code> file; direct plaintext ZIP export is not available, and restore/import is not implemented. External calendar apps and external PDF/image viewers are outside the FamilyVault security model after the user chooses to open or export data to them. The local security model assumes Android's app sandbox and a non-compromised app process; a rooted device, compromised same-UID component, or malicious native code in the app process is outside that model. Users should keep their device protected with a secure lock screen and store exported files only in trusted locations.</p>
+      </section>
+
+      <section aria-labelledby="changes">
+        <h2 id="changes">Changes to this policy</h2>
+        <p>This policy may be updated as the app adds new features or changes behavior, such as restore/import, cloud sync, user accounts, family sharing, storage/security changes, OCR/AI, analytics, or subscriptions.</p>
+      </section>
+
+      <section aria-labelledby="contact">
+        <h2 id="contact">Contact</h2>
+        <p>For privacy-related questions, contact the developer:</p>
+        <address>
+          <strong>Developer:</strong> Dante / FamilyVault<br>
+          <strong>Contact:</strong> <a href="mailto:info@dante.si">info@dante.si</a>
+        </address>
+      </section>
+    </article>
+  </main>
+
+  <footer>
+    <p>FamilyVault / Družinski sef</p>
+  </footer>
+</body>
+</html>
