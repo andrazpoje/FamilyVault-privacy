@@ -29,7 +29,7 @@
     <article>
       <header class="policy-heading">
         <h1>Pravilnik o zasebnosti</h1>
-        <p class="updated">Nazadnje posodobljeno: <time datetime="2026-08-28">28. avgust 2026</time></p>
+        <p class="updated">Nazadnje posodobljeno: <time datetime="2026-09-23">23. september 2026</time></p>
         <p class="eyebrow">FamilyVault / Družinski sef</p>
         <p class="lead">FamilyVault / Družinski sef je Android aplikacija za lokalno shranjevanje pomembnih družinskih podatkov, metapodatkov dokumentov, priponk in opomnikov v uporabnikovi napravi.</p>
         <p>Ta pravilnik o zasebnosti pojasnjuje, kako trenutna različica aplikacije ravna s podatki.</p>
@@ -55,7 +55,7 @@
         </ul>
         <p>Priponke, ki jih izbere uporabnik, se kopirajo v zasebno shrambo aplikacije v napravi.</p>
         <p>Lokalna podatkovna zbirka Room je šifrirana. Priponke in profilne fotografije so šifrirane v zasebni shrambi aplikacije.</p>
-        <p>Priponke so med mirovanjem šifrirane. Ko uporabnik odpre priponko, FamilyVault pripravi začasno dešifrirano datoteko v omejenem predpomnilniku in jo prek FileProviderja posreduje izbrani zunanji aplikaciji. Zunanja aplikacija ni del varnostnega modela FamilyVault. Samodejno čiščenje je omejeno na te znova ustvarljive dešifrirane kopije v predpomnilniku in natančno poimenovane starejše začasne datoteke z nešifrirano notranjo vsebino ZIP iz prejšnjega toka šifriranega izvoza. Trenutni šifrirani zapisovalnik ne ustvari začasne nešifrirane datoteke ZIP. Čiščenje ne izbriše samodejno trajne podatkovne zbirke, lokalnih ključev, šifriranih priponk, šifriranih profilnih fotografij, uporabniško izbranih izvozov <code>.fvbackup</code> ali starejših izvozov <code>.zip</code>, ustvarjenih s prejšnjimi različicami.</p>
+        <p>Priponke so med mirovanjem šifrirane. Ko uporabnik odpre priponko, FamilyVault pripravi začasno dešifrirano datoteko v omejenem predpomnilniku in jo prek FileProviderja posreduje izbrani zunanji aplikaciji. Zunanja aplikacija ni del varnostnega modela FamilyVault. Samodejno čiščenje je omejeno na te znova ustvarljive dešifrirane kopije v predpomnilniku in natančno poimenovane starejše začasne datoteke z nešifrirano notranjo vsebino ZIP iz prejšnjega toka šifriranega izvoza. Čiščenje ne izbriše samodejno trajne podatkovne zbirke, lokalnih ključev, šifriranih priponk, šifriranih profilnih fotografij ali izvozov varnostnih kopij, ustvarjenih s starejšimi različicami.</p>
         <p>Če uporabnik izbere možnost Dodaj v koledar, FamilyVault odpre izbrano koledarsko aplikacijo z osnovnimi podatki o datumu poteka veljavnosti. Koledarski dogodki niso več zaščiteni z varnostnim modelom FamilyVault ter so odvisni od izbrane koledarske aplikacije in uporabnikovih nastavitev sinhronizacije.</p>
       </section>
 
@@ -78,15 +78,14 @@
       <section aria-labelledby="data-sharing">
         <h2 id="data-sharing">Deljenje podatkov</h2>
         <p>Trenutna različica uporabniških podatkov ne deli samodejno z razvijalcem ali s storitvami tretjih oseb.</p>
-        <p>Dejanja, ki jih sproži uporabnik, kot so odpiranje priponk v zunanjih aplikacijah, dodajanje datuma poteka veljavnosti v koledarsko aplikacijo ali izvoz varnostnih kopij, lahko kopije podatkov premaknejo izven lokalnega varnostnega modela FamilyVault.</p>
-        <p>Uporabniki lahko svoje podatke ročno izvozijo z lokalno funkcijo izvoza varnostne kopije. Edini uporabniku dostopen izvoz varnostne kopije je z geslom zaščitena šifrirana datoteka <code>.fvbackup</code>. Uporabnik začne izvoz in izbere cilj prek ogrodja Storage Access Framework v sistemu Android, zato izvoz ostane pod njegovim nadzorom. FamilyVault pretočno posreduje notranjo vsebino varnostne kopije ZIP skozi overjeno šifriranje, ne da bi zapisal začasno nešifrirano datoteko ZIP. Neposredni izvoz nešifrirane datoteke ZIP ni na voljo. Obnovitev oziroma uvoz nista implementirana.</p>
-        <p>Uporabniki si morajo geslo varnostne kopije zapomniti, ker ga aplikacija ne more obnoviti. Neuspešen izvoz lahko na uporabniško izbranem mestu pusti datoteko <code>.fvbackup</code>. Pred sprejetjem končne avtentikacijske oznake je nepopolna in neveljavna; po pozni napaki pri zapisovanju na cilj, praznjenju medpomnilnika ali zapiranju je njeno stanje na disku neznano in je lahko že popolna. FamilyVault kljub temu sporoči neuspeh, zato se uporabnik na to datoteko ne sme zanašati in jo lahko pred ponovnim poskusom izbriše.</p>
+        <p>Dejanja, ki jih sproži uporabnik, kot so odpiranje priponk v zunanjih aplikacijah ali dodajanje datuma poteka veljavnosti v koledarsko aplikacijo, lahko izbrane podatke premaknejo izven lokalnega varnostnega modela FamilyVault.</p>
+        <p>Šifriran izvoz varnostnih kopij je v različici FamilyVault 0.2.0-beta.1 začasno nedostopen. Neposredni izvoz nešifrirane datoteke ZIP ter obnovitev oziroma uvoz prav tako niso na voljo. Sinhronizacija v oblaku in uporabniški računi niso na voljo.</p>
       </section>
 
       <section aria-labelledby="permissions">
         <h2 id="permissions">Dovoljenja aplikacije</h2>
         <p>Aplikacija lahko zahteva dovoljenja, potrebna za njene funkcije, na primer dovoljenje za obvestila v sistemu Android 13 in novejših.</p>
-        <p>Aplikacija za dodajanje priponk ali izvoz varnostnih kopij uporablja postopke dostopa do datotek, ki jih izbere uporabnik. Dodajanje datuma poteka veljavnosti v koledar uporablja Androidov intent za vstavljanje koledarskega dogodka in ne zahteva dovoljenja WRITE_CALENDAR.</p>
+        <p>Aplikacija za dodajanje priponk uporablja postopke dostopa do datotek, ki jih izbere uporabnik. Dodajanje datuma poteka veljavnosti v koledar uporablja Androidov intent za vstavljanje koledarskega dogodka in ne zahteva dovoljenja WRITE_CALENDAR.</p>
       </section>
 
       <section aria-labelledby="app-lock">
@@ -99,14 +98,14 @@
       <section aria-labelledby="retention">
         <h2 id="retention">Hramba podatkov</h2>
         <p>Podatki ostanejo shranjeni lokalno v uporabnikovi napravi, dokler jih uporabnik ne izbriše v aplikaciji ali aplikacije ne odstrani.</p>
-        <p>Izvožene varnostne kopije ostanejo na mestu, kamor jih uporabnik shrani ali deli.</p>
+        <p>Varnostne kopije, izvožene s starejšimi različicami, ostanejo na mestu, kamor jih je uporabnik shranil ali delil.</p>
       </section>
 
       <section aria-labelledby="deletion">
         <h2 id="deletion">Brisanje podatkov</h2>
         <p>Uporabniki lahko v aplikaciji, kjer je to podprto, izbrišejo družinske člane, dokumente, opomnike in priponke.</p>
         <p>Nekatera dejanja brisanja so lahko blokirana, dokler obstajajo povezani zapisi, da se prepreči nenamerna izguba podatkov.</p>
-        <p>Aplikacija trenutno ne ustvarja uporabniških računov, zato postopka brisanja računa ni. Lokalne podatke je mogoče izbrisati v aplikaciji, kjer je to podprto, z brisanjem podatkov aplikacije v Androidovih nastavitvah ali z odstranitvijo aplikacije. Varnostne kopije oziroma izvozne datoteke, ki jih je uporabnik ustvaril izven aplikacije, mora izbrisati sam na mestu, kamor jih je shranil.</p>
+        <p>Aplikacija trenutno ne ustvarja uporabniških računov, zato postopka brisanja računa ni. Lokalne podatke je mogoče izbrisati v aplikaciji, kjer je to podprto, z brisanjem podatkov aplikacije v Androidovih nastavitvah ali z odstranitvijo aplikacije. Varnostne kopije oziroma izvozne datoteke, ki so bile prej ustvarjene izven aplikacije, mora uporabnik izbrisati sam na mestu, kamor jih je shranil.</p>
       </section>
 
       <section aria-labelledby="children">
@@ -118,7 +117,7 @@
       <section aria-labelledby="security">
         <h2 id="security">Varnost</h2>
         <p>Trenutna različica je lokalno usmerjena izdaja.</p>
-        <p>Lokalna podatkovna zbirka Room, priponke in profilne fotografije so med mirovanjem šifrirane. Edini uporabniku dostopen izvoz varnostne kopije je z geslom zaščitena šifrirana datoteka <code>.fvbackup</code>; neposredni izvoz nešifrirane datoteke ZIP ni na voljo, obnovitev oziroma uvoz pa nista implementirana. Zunanje koledarske aplikacije in zunanji pregledovalniki PDF oziroma slik so zunaj varnostnega modela FamilyVault, ko uporabnik izbere odpiranje ali izvoz podatkov vanje. Lokalni varnostni model predpostavlja Androidov peskovnik aplikacije in nekompromitiran proces aplikacije; rootana naprava, kompromitirana komponenta z istim UID-jem ali zlonamerna domorodna koda v procesu aplikacije so zunaj tega modela. Uporabniki naj napravo zaščitijo z varnim zaklepom zaslona, izvožene datoteke pa shranjujejo samo na zaupanja vrednih mestih.</p>
+        <p>Lokalna podatkovna zbirka Room, priponke in profilne fotografije so med mirovanjem šifrirane. Šifriran izvoz varnostnih kopij je v tej beta različici začasno nedostopen; neposredni izvoz nešifrirane datoteke ZIP ter obnovitev oziroma uvoz niso na voljo. Zunanje koledarske aplikacije in zunanji pregledovalniki PDF oziroma slik so zunaj varnostnega modela FamilyVault, ko uporabnik izbere prenos izbranih podatkov vanje. Lokalni varnostni model predpostavlja Androidov peskovnik aplikacije in nekompromitiran proces aplikacije; rootana naprava, kompromitirana komponenta z istim UID-jem ali zlonamerna domorodna koda v procesu aplikacije so zunaj tega modela. Uporabniki naj napravo zaščitijo z varnim zaklepom zaslona.</p>
       </section>
 
       <section aria-labelledby="changes">
